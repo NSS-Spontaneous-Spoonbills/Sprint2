@@ -1,7 +1,5 @@
 # Spontaneous Spoonbills: Sprint 2
 
-
-
 ## To Run
 
 1. Clone the repo.
@@ -23,3 +21,9 @@ Ex. js_(branch_feature)
 Employee_Model.py -> class Employee_Model.py
 Employee_View.py -> class Employee_View.py
 ```
+
+## ERD Changes
+
+* Computer ticket requires adding two new fields to computer model:
+  * manufacturer
+  * make
