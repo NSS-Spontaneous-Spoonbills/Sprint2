@@ -1,0 +1,8 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'WorkforceManagement/main.css' %}" />
+
+<h1>Welcome to Workforce Management</h1>
+
+{% block main %}
+  {% include "WorkforceManagement/nav_bar.html" with nav_location=view.location %}
+{% endblock main %}
