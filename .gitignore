@@ -51,5 +51,6 @@ yarn-debug.log*
 yarn-error.log*
 scratch.*
 scratch/
-*venv/
+*env/
 Pipfile*
+
