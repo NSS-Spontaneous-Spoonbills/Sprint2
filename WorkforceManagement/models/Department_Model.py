@@ -7,3 +7,7 @@ class Department(models.Model):
     id = models.AutoField(primary=True)
     dept_name = models.CharField(max_length=50)
     budget = models.SmallIntegerField()
+
+    def __str__(self):
+
+        return f'{self.dept_name}'
