@@ -13,15 +13,13 @@
 ## Conventions
 
 1. All branches lowercase initials 
+1. File name to match class name and describe use 
+1. Every function and class needs a docstring
+1. Every function needs a dunderscore string (__str__)
 ```
 Ex. js_(branch_feature)
-```
-1. File name to match class name and describe use 
-```
-Ex.
 Employee_Model.py -> class Employee_Model.py
 Employee_View.py -> class Employee_View.py
 Employee_View.py -> class Employee_View.py
 ```
-1. Every function and class needs a docstring
-1. Every function needs a dunderscore string (__str__)
+
