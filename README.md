@@ -12,7 +12,7 @@
 
 ## Conventions
 
-1. All branches lowercase initials 
+1. All branches to have lowercase initials 
 1. File name to match class name and describe use 
 1. Every function and class needs a docstring
 1. Every function needs a dunderscore string (__str__)
