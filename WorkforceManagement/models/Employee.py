@@ -10,3 +10,7 @@ class Employee(models.Model):
     is_supervisor = models.BooleanField(default=False)
     name = models.CharField(max_length="50")
     start_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+
+        return f'{self.name}'
