@@ -16,10 +16,10 @@
 1. File name to match class name and describe use 
 1. Every function and class needs a docstring
 1. Every function needs a dunderscore string (__str__)
+1. All model names and field names should match the ERD exactly
+
 ```
 Ex. js_(branch_feature)
 Employee_Model.py -> class Employee_Model.py
 Employee_View.py -> class Employee_View.py
-Employee_View.py -> class Employee_View.py
 ```
-

@@ -25,8 +25,12 @@ Tag users that need to review this code
 
 ## Testing
 
-[ ] There are new unit tests in this PR, and I verify that there is full coverage of all new code.
-[ ] I certify that all existing tests pass
+* [ ] There are new unit tests in this PR, and I verify that there is full coverage of all new code.
+* [ ] I certify that all existing tests pass
+* [ ] The README has been updated with complete information
+* [ ] All classes and functions have docstrings
+* [ ] All file names match class and describe use (ex: Employee_Model.py, Employee_View.py)
+
 
 ## Deploy Notes
 
