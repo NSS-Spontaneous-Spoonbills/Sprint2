@@ -1,0 +1,16 @@
+{% extends "WorkforceManagement/index.html" %}
+
+{% block main_stuff %}
+
+  {% include "WorkforceManagement/nav_bar.html" with nav_location=location %}
+
+  <h1>Have a look at our Training Programs! </h1>
+
+  <ul>
+    {% for Programs in Training_Prog %}
+    <li>
+      <a href="{% url 'WorkforceManagement:training_detail' Training_Prog.id %}">{{Training_Prog.prog_name}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock main_stuff %}
