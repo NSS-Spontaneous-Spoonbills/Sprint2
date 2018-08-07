@@ -9,4 +9,4 @@ class Computer(models.Model):
     make = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"ComputerNum_something"
+        return f"ComputerNum {self.id}"
