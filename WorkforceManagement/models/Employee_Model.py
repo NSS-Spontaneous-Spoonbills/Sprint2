@@ -1,6 +1,6 @@
 from django.db import models
 
-class Employee(models.Model):
+class Employee_Model(models.Model):
     """
     Model for Employee Table contains department_id, computer_id, is_supervisor, name, & start_date
     """

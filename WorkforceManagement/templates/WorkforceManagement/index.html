@@ -3,6 +3,6 @@
 
 <h1>Welcome to Workforce Management</h1>
 
+{% include "WorkforceManagement/nav_bar.html" with nav_location=view.location %}
 {% block main %}
-  {% include "WorkforceManagement/nav_bar.html" with nav_location=view.location %}
 {% endblock main %}
