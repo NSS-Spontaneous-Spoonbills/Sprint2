@@ -13,7 +13,7 @@
 1. All branches to have lowercase initials 
 1. File name to match class name and describe use 
 1. Every function and class needs a docstring
-1. Every function needs a dunderscore string (__str__)
+1. Every model class needs a dunderscore string (__str__)
 1. All model names and field names should match the ERD exactly
 
 ```
@@ -27,3 +27,8 @@ Employee_View.py -> class Employee_View.py
 * Computer ticket requires adding two new fields to computer model:
   * manufacturer
   * make
+
+## Site URLs
+
+**Base URL**: http://127.0.0.1:8000/WorkforceManagement
+**Computer List**: http://127.0.0.1:8000/WorkforceManagement/computers/
