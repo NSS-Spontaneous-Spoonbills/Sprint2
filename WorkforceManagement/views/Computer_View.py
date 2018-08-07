@@ -10,5 +10,6 @@ def Computer_List_View(request):
 
 
 def Computer_Detail_View(request, pk):
+    """Displays details about a specific computer"""
     computer = get_object_or_404(Computer, pk=pk)
     return render(request, 'WorkforceManagement/Computer_Detail.html', {'computer': computer})
