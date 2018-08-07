@@ -6,11 +6,11 @@ class Training_Prog(models.Model):
     end_date, max_attendance.
     """
 
-    prog_name = models.CharField(max_length="50")
-    training_desc = models.CharField(max_length="100")
+    prog_name = models.CharField(max_length=50)
+    training_desc = models.CharField(max_length=100)
     start_date = models.DateField(auto_now=True)
     end_date = models.DateField(auto_now=False)
-    max_attendance = models.CharField(max_length="50")
+    max_attendance = models.CharField(max_length=50)
 
     def __str__(self):
 
