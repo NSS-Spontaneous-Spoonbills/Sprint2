@@ -1,4 +1,4 @@
-from django import HttpResponse
+from django.shortcuts import render
 from WorkforceManagement.models import Department
 
 def Department_List_View(request):
