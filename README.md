@@ -18,8 +18,8 @@
 
 ```
 Ex. js_(branch_feature)
-Employee_Model.py -> class Employee_Model.py
-Employee_View.py -> class Employee_View.py
+Employee_Model.py -> class Employee_Model
+Employee_View.py -> class Employee_View
 ```
 
 ## Pull Request Conventions
