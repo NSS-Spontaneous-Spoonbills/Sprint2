@@ -1,0 +1,16 @@
+{% extends "WorkforceManagement/index.html" %}
+
+{% block content %}
+
+  {% include "WorkforceManagement/nav_bar.html" with nav_location=location %}
+
+  <h1>List of training programs </h1>
+
+  <ul>
+    {% for artist in training_progs %}
+    <li>
+      <a href="{% url 'history:artist_detail' artist.id %}">{{artist.name}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
