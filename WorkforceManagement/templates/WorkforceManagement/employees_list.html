@@ -1,0 +1,12 @@
+{% extends 'WorkforceManagement/index.html' %} {}
+
+<h1>List of Employees</h1>
+
+<ul>
+    {% for employee in view.employees_list %}
+    <li>
+        <a href="{% url 'WorkforceManagement:employees_detail' employee.id %}">Name: {{employee.name}} Department: {{employee.dept_name}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock main_stuff %}
