@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, TemplateView, FormView, DetailView, CreateView
-from WorkforceManagement.models.Training_Model import Training_Prog
+from WorkforceManagement.models import Training_Prog
 
 # from history.forms import ArtistForm
 
