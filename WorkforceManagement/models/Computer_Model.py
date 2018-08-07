@@ -7,3 +7,6 @@ class Computer(models.Model):
     decom_date = models.DateTimeField(auto_now=True, auto_now_add=False)
     manufacturer = models.CharField(max_length=50)
     make = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"ComputerNum_something"
