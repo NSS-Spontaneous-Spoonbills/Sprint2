@@ -8,7 +8,7 @@
 1. Type ```python manage.py runserver``` into the command line.
 1. Open a web browser and navigate to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-## Conventions
+## Naming Conventions
 
 1. All branches to have lowercase initials 
 1. File name to match class name and describe use 
@@ -21,6 +21,10 @@ Ex. js_(branch_feature)
 Employee_Model.py -> class Employee_Model.py
 Employee_View.py -> class Employee_View.py
 ```
+
+## Pull Request Conventions
+
+1. Pull requests should include a list of which files were added, modified, or deleted in this PR so we can check for conflicts and scope of change.
 
 ## ERD Changes
 
