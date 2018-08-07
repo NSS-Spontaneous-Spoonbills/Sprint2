@@ -1,7 +1,5 @@
 {% extends "WorkforceManagement/index.html" %} {% block content %} {% for computer in computers %}
 <div class="computer">
-    {% comment %}
-    <a href="{% url 'computer_detail' pk=computer.pk %}">Computer Number {{computer.id}}</a> {% endcomment %}
-    <p>Computer Number {{computer.id}}</p>
+    <a href="{% url 'computer_detail' pk=computer.pk %}">Computer Number {{computer.id}}</a>
 </div>
 {% endfor %} {% endblock %}
