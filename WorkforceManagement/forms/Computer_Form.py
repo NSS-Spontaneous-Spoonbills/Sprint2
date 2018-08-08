@@ -7,6 +7,6 @@ class Computer_New_Form(forms.ModelForm):
 
     Author: Erin Meaker
     """
-
-    model = Computer
-    fields = ('purchase_date', 'decom_date', 'manufacturer', 'make')
+    class Meta:
+        model = Computer
+        fields = ('manufacturer', 'make')
