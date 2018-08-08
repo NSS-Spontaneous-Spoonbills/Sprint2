@@ -4,9 +4,7 @@
 <h2>Budget: ${{department.budget}}<h2>
 <h2>Employees: </h2>
   {% for employee in employees %}
-  <p>{{employee.department}}</p>
-  <p>{{department.dept_name}}</p>
-  {% if employee.department.dept_name %}
+  {% if employee.department.dept_name == department.dept_name %}
       <p> {{employee.name}} </p>
     {% endif %}
   {% endfor %}
