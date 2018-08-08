@@ -1,6 +1,8 @@
 
-{% extends "WorkforceManagement/index.html" %} {% block content %} {% for department in departments %}
+{% extends "WorkforceManagement/index.html" %} {% block content %}
+<h2>Viewing All Departments</h2>
+{% for department in departments %}
 <div class="department">
-    <a href="{% url 'department_detail' pk=department.pk%}">Department Name {{department.dept_name}}</a>
+    <a href="{% url 'department_detail' pk=department.pk%}">{{department.dept_name}} Department</a>
 </div>
 {% endfor %} {% endblock %}
