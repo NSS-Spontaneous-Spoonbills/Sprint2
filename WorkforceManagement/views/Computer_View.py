@@ -35,12 +35,15 @@ def Computer_New_View(request):
 
 
 def Computer_Update_View(request, pk):
+    """Displays form for updating the computers
+    Author: Erin Meaker
+    """
     computer = get_object_or_404(Computer, pk=pk)
     if request.method == "POST":
-        form = Computer_New_Form(request.POST, instance=post)
+        form = Computer_New_Form(request.POST, instance=computer)
         computer = form.save(commit=False)
         computer.save()
         return redirect('computer_detail', pk=computer.pk)
     else:
-        form = Computer_New_Form(instance=post)
+        form = Computer_New_Form(instance=computer)
     return render(request, 'WorkforceManagement/Computer_Update.html', {'form': form})

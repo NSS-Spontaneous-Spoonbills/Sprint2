@@ -5,5 +5,6 @@
 {% for computer in computers %}
 <div class="computer">
     <a href="{% url 'computer_detail' pk=computer.pk %}">Computer Number {{computer.id}}</a>
+    <a href="{% url 'computer_update' pk=computer.pk %}">Update</a>
 </div>
 {% endfor %} {% endblock %}

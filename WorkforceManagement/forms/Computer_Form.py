@@ -9,4 +9,4 @@ class Computer_New_Form(forms.ModelForm):
     """
     class Meta:
         model = Computer
-        fields = ('manufacturer', 'make')
+        fields = ('purchase_date', 'decom_date', 'manufacturer', 'make')
