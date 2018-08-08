@@ -5,8 +5,8 @@ class Computer(models.Model):
     """models data for bangazon employee computers
     Author: Erin Meaker
     """
-    purchase_date = models.DateTimeField()
-    decom_date = models.DateTimeField()
+    purchase_date = models.DateTimeField(null=True, blank=True)
+    decom_date = models.DateTimeField(null=True, blank=True)
     manufacturer = models.CharField(max_length=50)
     make = models.CharField(max_length=50)
 

@@ -9,4 +9,13 @@ class Computer_New_Form(forms.ModelForm):
     """
     class Meta:
         model = Computer
-        fields = ('purchase_date', 'decom_date', 'manufacturer', 'make')
+        fields = ('purchase_date', 'manufacturer', 'make')
+
+
+class Computer_Update_Form(forms.ModelForm):
+    """Form for updating an existing computer
+    Author: Erin Meaker
+    """
+    class Meta:
+        model = Computer
+        fields = ('decom_date', 'manufacturer', 'make')

@@ -40,10 +40,10 @@ def Computer_Update_View(request, pk):
     """
     computer = get_object_or_404(Computer, pk=pk)
     if request.method == "POST":
-        form = Computer_New_Form(request.POST, instance=computer)
+        form = Computer_UpdateForm(request.POST, instance=computer)
         computer = form.save(commit=False)
         computer.save()
         return redirect('computer_detail', pk=computer.pk)
     else:
-        form = Computer_New_Form(instance=computer)
+        form = Computer_Update_Form(instance=computer)
     return render(request, 'WorkforceManagement/Computer_Update.html', {'form': form})
