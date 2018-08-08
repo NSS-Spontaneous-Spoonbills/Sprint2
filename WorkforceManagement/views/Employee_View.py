@@ -5,3 +5,7 @@ from WorkforceManagement.models import Department, Computer, Employee
 class Employee_List_View(ListView):
     model = Employee
     context_object_name = 'Employee_List'
+
+class Employee_Detail_View(ListView):
+    model = Employee
+    context_object_name = 'Employee_Detail'

@@ -3,10 +3,8 @@
     <h3>List of Employees</h3>
     {% for employee in Employee_List %}
     <ul>
-        <li>{{employee.name}}: {{employee.department.dept_name}}</li>
-            <!-- {% with employee.department.all|first as employee %} -->
-
-            <!-- {% endwith %} -->
+        <a href="{% url 'employee_detail' employee.pk %}">Employee: {{employee.name}}</a>
+        <li> Department : {{employee.department.dept_name}}</li>
     </ul>
     {% endfor %}
 
