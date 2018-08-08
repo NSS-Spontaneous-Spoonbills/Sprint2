@@ -3,6 +3,7 @@ from django.db import models
 class Employee(models.Model):
     """
     Model for Employee Table contains department_id, computer_id, is_supervisor, name, & start_date
+    Includes one many to many field: training that removes the need for a joining table between employees and training programs
     """
     training = models.ManyToManyField('Training_Prog')
     department = models.ForeignKey('Department', on_delete=models.CASCADE)
