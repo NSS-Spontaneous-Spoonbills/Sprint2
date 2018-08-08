@@ -3,10 +3,10 @@
     <h3>List of Employees</h3>
     {% for employee in Employee_List %}
     <ul>
-        <a href="{% url 'employee_detail' employee.pk %}">Employee: {{employee.name}}</a>
+        <li> <a href="{% url 'employee_detail' pk=employee.pk %}">Employee: {{employee.name}}</a> </li>
         <li> Department : {{employee.department.dept_name}}</li>
     </ul>
     {% endfor %}
 
 </div>
-{% endblock content %}
+{% endblock %}
