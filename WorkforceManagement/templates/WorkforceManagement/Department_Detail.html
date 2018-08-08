@@ -3,10 +3,10 @@
 <h1>Department Name:  {{department.dept_name}}</h1>
 <h2>Budget: ${{department.budget}}<h2>
 <h2>Employees: </h2>
-
   {% for employee in employees %}
-  <p> {{employee}}
-    {% if employee.department == department.pk %}
+  <p>{{employee.department}}</p>
+  <p>{{department.dept_name}}</p>
+  {% if employee.department.dept_name %}
       <p> {{employee.name}} </p>
     {% endif %}
   {% endfor %}
