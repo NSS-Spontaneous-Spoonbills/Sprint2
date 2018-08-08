@@ -2,7 +2,9 @@ from django.db import models
 
 
 class Computer(models.Model):
-    """models data for bangazon employee computers"""
+    """models data for bangazon employee computers
+    Author: Erin Meaker
+    """
     purchase_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     decom_date = models.DateTimeField(auto_now=True, auto_now_add=False)
     manufacturer = models.CharField(max_length=50)
