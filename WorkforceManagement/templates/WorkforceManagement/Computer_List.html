@@ -1,4 +1,8 @@
-{% extends "WorkforceManagement/index.html" %} {% block content %} {% for computer in computers %}
+{% extends "WorkforceManagement/index.html" %} {% block content %}
+<h1>Computer List</h1>
+<a href="{% url 'computer_new' %}">Create a New Computer</a>
+
+{% for computer in computers %}
 <div class="computer">
     <a href="{% url 'computer_detail' pk=computer.pk %}">Computer Number {{computer.id}}</a>
 </div>
