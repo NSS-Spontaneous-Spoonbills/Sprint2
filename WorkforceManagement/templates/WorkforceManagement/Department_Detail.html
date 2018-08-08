@@ -1,10 +1,13 @@
 {% extends 'WorkforceManagement/index.html' %} {% block content %}
 
 <h1>Department Name:  {{department.dept_name}}</h1>
+<h2>Budget: ${{department.budget}}<h2>
 <h2>Employees: </h2>
+
   {% for employee in employees %}
+  <p> {{employee}}
     {% if employee.department == department.pk %}
-      <p> {{employee.nameA}} </p>
+      <p> {{employee.name}} </p>
     {% endif %}
   {% endfor %}
 
