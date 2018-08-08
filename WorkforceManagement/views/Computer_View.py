@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from WorkforceManagement.models import Computer
-from WorkforceManagement.forms import Computer_New_Form
+from WorkforceManagement.forms import *
 
 
 def Computer_List_View(request):
@@ -40,7 +40,7 @@ def Computer_Update_View(request, pk):
     """
     computer = get_object_or_404(Computer, pk=pk)
     if request.method == "POST":
-        form = Computer_UpdateForm(request.POST, instance=computer)
+        form = Computer_Update_Form(request.POST, instance=computer)
         computer = form.save(commit=False)
         computer.save()
         return redirect('computer_detail', pk=computer.pk)
