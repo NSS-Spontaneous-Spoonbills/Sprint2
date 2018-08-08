@@ -1,0 +1,11 @@
+{% extends 'WorkforceManagement/index.html' %} {% block content %}
+
+<h1>Department Name:  {{department.dept_name}}</h1>
+<h2>Employees: </h2>
+  {% for employee in employees %}
+    {% if employee.department == department.pk %}
+      <p> {{employee.nameA}} </p>
+    {% endif %}
+  {% endfor %}
+
+{%endblock%}
