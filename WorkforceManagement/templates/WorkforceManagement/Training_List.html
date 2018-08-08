@@ -1,5 +1,9 @@
-{% extends "WorkforceManagement/index.html" %} {% block content %} {% for prog in training_progs %}
+{% extends "WorkforceManagement/index.html" %} {% block content %}
+
+<h1>Training Programs</h1>
+
+{% for prog in training_progs %}
 <div class="training">
-    <a href="{% url 'training_list' pk=training_progs.pk %}">Training Program {{prog.id}}</a>
+    <a href="{% url 'training_detail' pk=prog.pk %}">{{prog.id}} {{prog.prog_name}}</a>
 </div>
 {% endfor %} {% endblock %}
