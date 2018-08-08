@@ -53,4 +53,5 @@ scratch.*
 scratch/
 *env/
 Pipfile*
+_migrations
 
