@@ -54,6 +54,6 @@ scratch.*
 scratch/
 *env/
 Pipfile*
-_migrations
+migrations
 db.sqlite3-journal
 
