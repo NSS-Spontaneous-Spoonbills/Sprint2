@@ -40,3 +40,6 @@ Employee_View.py -> class Employee_View
 * **Computer Detail**: http://127.0.0.1:8000/WorkforceManagement/computers/1 (or 2, 3, etc.)
 * **New Computer Form**: http://127.0.0.1:8000/WorkforceManagement/computers/new
 * **Update Computer Form**: http://127.0.0.1:8000/WorkforceManagement/computers/1/update/
+* **Employee List**: http://127.0.0.1:8000/WorkforceManagement/employees/
+* **Department List**: http://127.0.0.1:8000/WorkforceManagement/departments/
+* **Training Program List**: http://127.0.0.1:8000/WorkforceManagement/training_programs/
