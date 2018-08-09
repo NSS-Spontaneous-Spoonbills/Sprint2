@@ -11,4 +11,4 @@ class Employee_New_Form(forms.ModelForm):
         # departments = forms.ModelChoiceField(queryset=Department.objects.all())
 
         model = Employee
-        fields = ('name', 'start_date', 'department', )
+        fields = ('name', 'start_date', 'department', 'computer' )
