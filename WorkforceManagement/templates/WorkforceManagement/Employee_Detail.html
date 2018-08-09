@@ -1,0 +1,20 @@
+{% extends 'WorkforceManagement/index.html' %}
+
+{% block content %}
+<div class="employees">
+    <h3>Employee Details</h3>
+    <ul>
+        <li>Name: {{Employee_Detail.name}}</li>
+        <li>Department: {{Employee_Detail.department}}</li>
+        <li>Computer: {{Employee_Detail.computer}}</li>
+        <li>Training Programs: </li>
+
+        <ul>
+        {% for train in Employee_Detail.training.all %}
+        <li>{{train.prog_name}}</li>
+        {% endfor %}
+        </ul>   
+    </ul>
+
+</div>
+{% endblock %}
