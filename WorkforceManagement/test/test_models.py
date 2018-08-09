@@ -13,7 +13,7 @@ class Employee_Test(TestCase):
     # def setUpTestData(self):
     def test_list_employee(self):
         """
-        test_list_employee has four variables that create instances of our models to test if Employee can pass the proper tests
+        test_list_employee has four variables that create instances of our models to see if Employee can pass the proper tests
 
         """
         new_department = Department_Model.Department.objects.create(
@@ -41,6 +41,11 @@ class Employee_Test(TestCase):
             name='Jacob Smith',
             start_date='2018-08-08'
         )
+        """
+        When adding an item with a ManyToManyField on, like training. When creating the instance of new employee, don't store the training directly on employee.
+        Adding the new_training, like below, satisfies the many to many relationship.
+        Author: Jacob Smith
+        """
         new_employee.training.add(new_training)
 
 
