@@ -1,6 +1,7 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 from django.urls import reverse
 from WorkforceManagement.models import Employee_Model, Department_Model, Computer_Model, Training_Model
+
 
 class Employee_Test(TestCase):
     """
@@ -11,6 +12,7 @@ class Employee_Test(TestCase):
     Has one function named test_list_employee with four variables: new_department, new_computer, new_training, new_employee
     """
     # def setUpTestData(self):
+
     def test_list_employee(self):
         """
         test_list_employee has four variables that create instances of our models to see if Employee can pass the proper tests
@@ -48,7 +50,6 @@ class Employee_Test(TestCase):
         """
         new_employee.training.add(new_training)
 
-
     # ========== TESTING ==========
         """
         Response will store our url and represent fetching this list
@@ -61,10 +62,44 @@ class Employee_Test(TestCase):
         self.assertEqual(response.status_code, 200)
 
         """
-        Test that checks to see if the employee list returns only on item. It is the one object we created & stored in the new_employee variable
+        Test that checks to see if the employee list returns only one item. It is the one object we created & stored in the new_employee variable
         """
         self.assertEqual(len(response.context['Employee_List']), 1)
         """
         This test checks if the encoded variable is written in python
         """
         self.assertIn(new_employee.name.encode(), response.content)
+
+
+class Computer_Test(TestCase):
+    """Tests computer functionality for WorkforceManagement
+    Author: Erin Meaker
+    """
+
+    def test_list_computer(self):
+        """Tests will build two testing computers to ascertain the following:
+
+        Author: Erin Meaker
+        """
+        assigned_Computer = Computer_Model.Computer.objects.create(
+            purchase_date='2018-01-01',
+            decom_date=None,
+            manufacturer='Dell',
+            make='Spider Nest',
+            has_been_assigned='1'
+        )
+        unassigned_Computer = Computer_Model.Computer.objects.create(
+            purchase_date='2018-01-01',
+            decom_date=None,
+            manufacturer='Apple',
+            make='Orange',
+            has_been_assigned='0'
+        )
+        c = Client()
+
+        # Testing
+
+        response = c.get('computers', {'purchase_date': '2018-01-01', 'decom_date': None,
+                                       'manufacturer': 'Dell', 'make': 'Spider Nest', 'has_been_assigned': '1'})
+
+        self.assertEqual(response, 'computers', kwargs={'pk': 1})
