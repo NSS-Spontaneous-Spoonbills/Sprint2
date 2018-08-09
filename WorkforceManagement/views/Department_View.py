@@ -17,14 +17,14 @@ def Department_Detail_View(request, pk):
     return render(request, 'WorkforceManagement/Department_Detail.html', {'department': department, 'employees': employees})
 
 def Department_New_View(request):
-    """Displays form for adding new computer to the database
+    """Displays form for adding new department to the database
     Author: David Paul
     """
     if request.method == "POST":
         form = Department_New_Form(request.POST)
-        new_comp = form.save(commit=False)
-        new_comp.save()
-        return redirect('computer_detail', pk=new_comp.pk)
+        new_dept = form.save(commit=False)
+        new_dept.save()
+        return redirect('department_detail', pk=new_dept.pk)
     else:
         form = Department_New_Form()
     return render(request, 'WorkforceManagement/Department_Update.html', {'form': form})
