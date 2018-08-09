@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from WorkforceManagement.models import Employee_Model, Department_Model, Computer_Model, Training_Model
 
-class Employee_Test(TestCase):
+class Employee_Detail_Test(TestCase):
     """
     Class Employee Test was created to test on whether an instatiated user passes the proper Status, Context, & Content
     Author: Jacob Smith
@@ -34,7 +34,6 @@ class Employee_Test(TestCase):
             end_date='2018-08-10',
             max_attendance='50'
         )
-        
         new_employee = Employee_Model.Employee.objects.create(
             department=new_department,
             computer=new_computer,
@@ -54,7 +53,7 @@ class Employee_Test(TestCase):
         """
         Response will store our url and represent fetching this list
         """
-        response = self.client.get(reverse('Employee_List'))
+        response = self.client.get(reverse('employee_detail', kwargs={'pk':1}))
 
         """
         Test that checks to see if the response returns an actual item, and that it can be found. Hence the 200 status code
@@ -64,8 +63,4 @@ class Employee_Test(TestCase):
         """
         Test that checks to see if the employee list returns only on item. It is the one object we created & stored in the new_employee variable
         """
-        self.assertEqual(len(response.context['Employee_List']), 1)
-        """
-        This test checks if the encoded variable is written in python
-        """
-        self.assertIn(new_employee.name.encode(), response.content)
+        self.assertEqual(response.context['name'], "Jacob Smith")
