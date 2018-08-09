@@ -15,6 +15,8 @@ git fetch --all
 git checkout <feature_branch>
 ```
 
+
+
 ## Impacted Areas in Application
 
 List general components of the application that this PR will affect:
@@ -30,7 +32,6 @@ Tag users that need to review this code
 * [ ] The README has been updated with complete information
 * [ ] All classes and functions have docstrings
 * [ ] All file names match class and describe use (ex: Employee_Model.py, Employee_View.py)
-
 
 ## Deploy Notes
 
