@@ -44,24 +44,37 @@ class Employee_Detail_Test(TestCase):
         """
         When adding an item with a ManyToManyField on, like training. When creating the instance of new employee, don't store the training directly on employee.
         Adding the new_training, like below, satisfies the many to many relationship.
-        Author: Jacob Smith
+        Author: Jacob Smith && Cashew Rose
         """
         new_employee.training.add(new_training)
 
 
     # ========== TESTING ==========
         """
-        Response will store our url and represent fetching this list
+        Response will store the returned url information to test against. 
+            This response is checking the one instance being made in kwargs (DetailView must have an arguement passed this way in test suite)
         """
         response = self.client.get(reverse('employee_detail', kwargs={'pk':1}))
 
         """
-        Test that checks to see if the response returns an actual item, and that it can be found. Hence the 200 status code
+        Test that checks to see if the response returns that it can be found. Thats what the 200 status code is
         """
         self.assertEqual(response.status_code, 200)
 
         """
-        Test that checks to see if the employee list returns only on item. It is the one object we created & stored in the new_employee variable
+        Test that checks to see if the employee detail content of the response has all of the expected values of the employee for each of the properties
         """
         self.assertIn(new_employee.name.encode(), response.content)
+
+        """
+        Test that checks to see if the employee detail content of the response has all of the expected values of the employee for each of the properties
+            Foreign key tests must be formatted in funky unicode and then encoded ¯\_(ツ)_/¯
+        """
+        self.assertIn(u'{}'.format(new_employee.computer).encode(), response.content)
+        self.assertIn(u'{}'.format(new_employee.department).encode(), response.content)
+        self.assertIn(new_employee.training, response.content)
+
+        """
+        Test that checks to see if the whole employee object has made it into the response context
+        """
         self.assertEqual(new_employee, response.context['object'])
