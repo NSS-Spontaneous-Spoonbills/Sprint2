@@ -10,6 +10,6 @@ def Training_List_View(request):
 
 
 def Training_Detail_View(request, pk):
-    """Displays details about a specific computer"""
+    """Displays details about a specific program"""
     prog = get_object_or_404(Training_Prog, pk=pk)
     return render(request, 'WorkforceManagement/Training_Detail.html', {'prog': prog})
