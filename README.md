@@ -31,6 +31,7 @@ Employee_View.py -> class Employee_View
 * Computer ticket requires adding two new fields to computer model:
   * manufacturer
   * make
+  * has_been_assigned
 
 ## Site URLs
 

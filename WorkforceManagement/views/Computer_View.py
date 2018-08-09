@@ -47,3 +47,11 @@ def Computer_Update_View(request, pk):
     else:
         form = Computer_Update_Form(instance=computer)
     return render(request, 'WorkforceManagement/Computer_Update.html', {'form': form})
+
+
+def Computer_Delete_View(request, pk):
+    """Displays template for deleting a computer
+    Author: Erin Meaker"""
+    computer = get_object_or_404(Computer, pk=pk)
+    computer.delete()
+    return redirect('computer_list')
