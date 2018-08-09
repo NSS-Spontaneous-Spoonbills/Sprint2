@@ -6,5 +6,8 @@
 <div class="computer">
     <a href="{% url 'computer_detail' pk=computer.pk %}">Computer Number {{computer.id}}</a>
     <a href="{% url 'computer_update' pk=computer.pk %}">Update</a>
+    {% if computer.has_been_assigned == False %}
+    <a href="{% url 'computer_delete' pk=computer.pk %}">Delete</a>
+    {% endif %}
 </div>
 {% endfor %} {% endblock %}
