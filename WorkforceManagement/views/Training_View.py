@@ -15,15 +15,14 @@ def Training_Detail_View(request, pk):
     return render(request, 'WorkforceManagement/Training_Detail.html', {'prog': prog})
 
 def Training_Edit_View(request, pk):
-    """Displays form for updating the computers
-    Author: Erin Meaker
+    """Displays form for updating the program
     """
-    computer = get_object_or_404(Computer, pk=pk)
+    prog = get_object_or_404(Training_Prog, pk=pk)
     if request.method == "POST":
-        form = Computer_Update_Form(request.POST, instance=computer)
-        computer = form.save(commit=False)
-        computer.save()
-        return redirect('computer_detail', pk=computer.pk)
+        form = Program_Edit_Form(request.POST, instance=prog)
+        prog = form.save(commit=False)
+        prog.save()
+        return redirect('training_detail', pk=prog.pk)
     else:
-        form = Computer_Update_Form(instance=computer)
-    return render(request, 'WorkforceManagement/Computer_Update.html', {'form': form})
+        form = Program_Edit_Form(instance=computer)
+    return render(request, 'WorkforceManagement/Training_Edit.html', {'form': form})

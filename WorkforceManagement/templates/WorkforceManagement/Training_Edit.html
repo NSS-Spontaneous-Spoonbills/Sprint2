@@ -1,6 +1,6 @@
 {% extends 'WorkforceManagement/index.html' %} {% block content %}
 <h1>Add Training Program</h1>
-<form method="POST" class='computer-form'>{% csrf_token %} {{ form.as_p }}
+<form method="POST" class='program-form'>{% csrf_token %} {{ form.as_p }}
     <button type="submit" class="btn">Save</button>
 </form>
 {% endblock %}
