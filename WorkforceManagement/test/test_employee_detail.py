@@ -63,4 +63,5 @@ class Employee_Detail_Test(TestCase):
         """
         Test that checks to see if the employee list returns only on item. It is the one object we created & stored in the new_employee variable
         """
-        self.assertEqual(response.context['name'], "Jacob Smith")
+        self.assertIn(new_employee.name.encode(), response.content)
+        self.assertEqual(new_employee, response.context['object'])
