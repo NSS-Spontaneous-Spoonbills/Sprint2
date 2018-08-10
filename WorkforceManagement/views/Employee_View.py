@@ -30,8 +30,7 @@ class Employee_Detail_View(DetailView):
 class Employee_Form_View(FormView):
 
     template_name = 'WorkforceManagement/Employee_Form.html'
-    form_class = Employee_New_Form
-    context_object_name= 'Employee_Form'
+    form_class= Employee_New_Form
     # NOTE! Be sure to put the slash in front of the url to route properly
     success_url = '/WorkforceManagement/employees/'
 
@@ -40,9 +39,10 @@ class Employee_Form_View(FormView):
     #     context["location"] = "new_employee"
     #     return context
 
-
     def form_valid(self, form):
     # This method is called when valid form data has been POSTed.
     # It should return an HttpResponse.
         form.save()
         return super(Employee_Form_View, self).form_valid(form)
+
+    # def comp_assigned(self, id):

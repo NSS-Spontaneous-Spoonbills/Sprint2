@@ -1,5 +1,5 @@
 from django import forms
-from WorkforceManagement.models import Employee, Department
+from WorkforceManagement.models.Employee_Model import Employee
 
 class Employee_New_Form(forms.ModelForm):
     """
@@ -8,7 +8,13 @@ class Employee_New_Form(forms.ModelForm):
     """
     class Meta:
 
-        # departments = forms.ModelChoiceField(queryset=Department.objects.all())
-
         model = Employee
         fields = ('name', 'start_date', 'department', 'computer' )
+
+# Employee_Computer_Inline_FormSet = forms.inlineformset_factory(
+#     models.Employee,
+#     models.Computer,
+#     fields=('computer')
+# )
+
+
