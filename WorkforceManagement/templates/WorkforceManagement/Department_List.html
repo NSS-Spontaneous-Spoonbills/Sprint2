@@ -1,6 +1,7 @@
 
 {% extends "WorkforceManagement/index.html" %} {% block content %}
 <h2>Viewing All Departments</h2>
+<a href="{% url 'department_new' %}">Create a New department</a>
 {% for department in departments %}
 <div class="department">
     <a href="{% url 'department_detail' pk=department.pk%}">{{department.dept_name}} Department</a>
