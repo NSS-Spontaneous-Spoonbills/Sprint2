@@ -9,7 +9,6 @@ urlpatterns = [
     path('computers/new', views.Computer_New_View, name='computer_new'),
     path('computers/<int:pk>/update/',
          views.Computer_Update_View, name='computer_update'),
-    path('computers/<int:pk>/', views.Computer_Detail_View, name="computer_detail"),
     path('computers/<int:pk>/delete/',
          views.Computer_Delete_View, name='computer_delete'),
     path('employees/', views.Employee_View.Employee_List_View.as_view(),
@@ -21,6 +20,8 @@ urlpatterns = [
     path('training_programs/<int:pk>/',
          views.Training_Detail_View, name="training_detail"),
     path('departments/', views.Department_List_View, name="department_list"),
+   path('departments/<int:pk>/', views.Department_Detail_View, name="department_detail"),
+    path('departments/new', views.Department_New_View, name='department_new'),
     path('departments/<int:pk>/', views.Department_Detail_View,
          name="department_detail"),
 ]
