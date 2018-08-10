@@ -36,6 +36,7 @@ class Employee_Test(TestCase):
             end_date='2018-08-10',
             max_attendance='50'
         )
+        
         new_employee = Employee_Model.Employee.objects.create(
             department=new_department,
             computer=new_computer,
