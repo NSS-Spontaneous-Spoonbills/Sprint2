@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from WorkforceManagement.views import Employee_View
+# from WorkforceManagement.views import Employee_View
 
 
 urlpatterns = [
@@ -14,7 +14,8 @@ urlpatterns = [
          views.Computer_Delete_View, name='computer_delete'),
     path('employees/', views.Employee_View.Employee_List_View.as_view(),
          name='Employee_List'),
-    path('employees/<int:pk>', views.Employee_View.Employee_Detail_View.as_view(), name='employee_detail'),
+    path('employees/<int:pk>',
+         views.Employee_View.Employee_Detail_View.as_view(), name='employee_detail'),
     path('training_programs/', views.Training_List_View, name="training_list"),
     path('training_programs/<int:pk>/',
          views.Training_Detail_View, name="training_detail"),
