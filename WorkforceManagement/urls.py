@@ -17,7 +17,7 @@ urlpatterns = [
     path('employees/<int:pk>',
          views.Employee_View.Employee_Detail_View.as_view(), name='employee_detail'),
     path('training_programs/', views.Training_View, name="training_list"),
-    path('training_programs/add/', views.Training_View.Training_New_View, name="training_new"),
+    # path('training_programs/add/', views.Training_View.Training_New_View, name="training_new"),
     path('training_programs/<int:pk>/',
          views.Training_Detail_View, name="training_detail"),
     path('departments/', views.Department_List_View, name="department_list"),

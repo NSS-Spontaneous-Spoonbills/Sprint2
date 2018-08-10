@@ -16,15 +16,15 @@ def Training_Detail_View(request, pk):
     prog = get_object_or_404(Training_Prog, pk=pk)
     return render(request, 'WorkforceManagement/Training_Detail.html', {'prog': prog})
 
-def Training_New_View(request, pk):
-    """Displays form for updating the program
-    """
-    prog = get_object_or_404(Training_Prog, pk=pk)
-    if request.method == "POST":
-        form = Training_Form(request.POST, instance=prog)
-        prog = form.save(commit=False)
-        prog.save()
-        return redirect('training_detail', pk=prog.pk)
-    else:
-        form = Program_Edit_Form(instance=computer)
-    return render(request, 'WorkforceManagement/Training_Add.html', {'form': form})
+# def Training_New_View(request, pk):
+#     """Displays form for updating the program
+#     """
+#     prog = get_object_or_404(Training_Prog, pk=pk)
+#     if request.method == "POST":
+#         form = Training_Form(request.POST, instance=prog)
+#         prog = form.save(commit=False)
+#         prog.save()
+#         return redirect('training_add', pk=prog.pk)
+#     else:
+#         form = Program_Edit_Form(instance=computer)
+#     return render(request, 'WorkforceManagement/Training_Add.html', {'form': form})
