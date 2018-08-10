@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, TemplateView, FormView, DetailView, CreateView
+from WorkforceManagement.forms import *
+
 
 from WorkforceManagement.models import Training_Prog
 
@@ -14,15 +16,15 @@ def Training_Detail_View(request, pk):
     prog = get_object_or_404(Training_Prog, pk=pk)
     return render(request, 'WorkforceManagement/Training_Detail.html', {'prog': prog})
 
-def Training_Edit_View(request, pk):
+def Training_New_View(request, pk):
     """Displays form for updating the program
     """
     prog = get_object_or_404(Training_Prog, pk=pk)
     if request.method == "POST":
-        form = Program_Edit_Form(request.POST, instance=prog)
+        form = Training_Form(request.POST, instance=prog)
         prog = form.save(commit=False)
         prog.save()
         return redirect('training_detail', pk=prog.pk)
     else:
         form = Program_Edit_Form(instance=computer)
-    return render(request, 'WorkforceManagement/Training_Edit.html', {'form': form})
+    return render(request, 'WorkforceManagement/Training_Add.html', {'form': form})
