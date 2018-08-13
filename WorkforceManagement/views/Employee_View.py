@@ -29,7 +29,7 @@ class Employee_Detail_View(DetailView):
 
 class Employee_Form_View(FormView):
     """
-    Employee_Form_View inherits FormView and is using template Employee_Form.html. Ths renders a 'new' form view that admin can create a new employee with. form_class is inheriting the actual form that is going to include the necessary fields that receive the proper format.
+    Employee_Form_View inherits FormView and is using Employee_Form.html template. This renders a 'new' form view that Workforce Management can create a new employee with. form_class is inheriting the actual form that is going to include the necessary fields that receive the proper format.
     Includes dropdowns for department and computer.
     Built-in form_valid:
         This method is called when valid form data has been POSTed.
@@ -48,11 +48,16 @@ class Employee_Form_View(FormView):
         return super(Employee_Form_View, self).form_valid(form)
 
 class Employee_Update_View(UpdateView):
-    """This builds a form to update an employee."""
+    """
+    Employee_Update_View inherits UpdateView and is using the Employee_Update_Form.html template.
+    The view is using the Employee model and is making name, department, & computer editable
+    Once the edits have been made, the success_url is redirecting to the url written.
+    Author: Jacob Smith
+    """
 
 
     model = Employee
-    fields = ['name','department', 'computer']
+    fields = ['name','department', 'computer', 'training']
     template_name_suffix="_Update_Form"
     success_url = '/WorkforceManagement/employees'
 
