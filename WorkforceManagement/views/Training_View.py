@@ -20,10 +20,10 @@ def Training_New_View(request):
     """
 
     if request.method == "POST":
-        form = Training_Form(request.POST, instance=prog)
-        prog = form.save(commit=False)
-        prog.save()
-        return redirect('training_detail', pk=prog.pk)
+        form = Training_Form(request.POST)
+        add_prog = form.save(commit=False)
+        add_prog.save()
+        return redirect('training_detail', pk=add_prog.pk)
     else:
-        form = Training_Form(instance=prog)
+        form = Training_Form()
     return render(request, 'WorkforceManagement/Training_Add.html', {'form': form})
