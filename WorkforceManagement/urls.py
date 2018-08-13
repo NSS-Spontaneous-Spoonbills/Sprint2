@@ -14,6 +14,7 @@ urlpatterns = [
     path('employees/new/', views.Employee_Form_View.as_view(), name="new_employee"),
     path('training_programs/', views.Training_List_View, name="training_list"),
     path('training_programs/<int:pk>/', views.Training_Detail_View, name="training_detail"),
+    path('training_programs/add/', views.Training_New_View, name="training_new"),
     path('departments/', views.Department_List_View, name="department_list"),
     path('departments/<int:pk>/', views.Department_Detail_View, name="department_detail"),
     path('departments/new', views.Department_New_View, name='department_new'),
