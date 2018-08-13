@@ -66,4 +66,4 @@ class Computer_Test(TestCase):
             reverse('computer_delete', kwargs={'pk': 2}))
 
         self.assertEqual(self.delete_response_no_go.status_code, 302)
-        self.assertEqual(self.delete_response_yes_go.status_code, 302)
+        self.assertEqual(self.delete_response_yes_go.status_code, 200)
