@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, FormView
+from django.views.generic import ListView, DetailView, FormView, UpdateView
 from WorkforceManagement.models import Department, Computer, Employee
 from WorkforceManagement.forms import Employee_New_Form
 
@@ -47,5 +47,12 @@ class Employee_Form_View(FormView):
         form.save()
         return super(Employee_Form_View, self).form_valid(form)
 
-# class Empl
+class Employee_Update_View(UpdateView):
+    """This builds a form to update an employee."""
+
+
+    model = Employee
+    fields = ['name','department', 'computer']
+    template_name_suffix="_Update_Form"
+    success_url = '/WorkforceManagement/employees'
 
