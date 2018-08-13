@@ -1,6 +1,7 @@
 {% extends "WorkforceManagement/index.html" %} {% block content %}
 
-<h1>Training Programs</h1>
+<h2>Training Programs</h2>
+<a href="{% url 'new_training' %}">Create New Program</a>
 
 {% for prog in training_progs %}
 <div class="training">
