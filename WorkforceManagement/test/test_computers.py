@@ -60,4 +60,10 @@ class Computer_Test(TestCase):
     def test_delete(self):
         """This test asserts that the assigned computer cannot be deleted and remains in the database but the unassigned computer is deleted"""
 
-        pass
+        self.delete_response_no_go = self.client.delete(
+            reverse('computer_delete', kwargs={'pk': 1}))
+        self.delete_response_yes_go = self.client.delete(
+            reverse('computer_delete', kwargs={'pk': 2}))
+
+        self.assertEqual(self.delete_response_no_go.status_code, 200)
+        self.assertEqual(self.delete_response_yes_go.status_code, 200)
