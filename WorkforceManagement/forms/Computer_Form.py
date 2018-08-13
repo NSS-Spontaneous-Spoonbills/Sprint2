@@ -18,3 +18,7 @@ class Computer_Update_Form(forms.ModelForm):
     class Meta:
         model = Computer
         fields = ('decom_date', 'manufacturer', 'make')
+
+
+
+

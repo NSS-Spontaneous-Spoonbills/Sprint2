@@ -1,0 +1,9 @@
+{% extends 'WorkforceManagement/index.html' %} {% block content %}
+
+<h4>Fill out the information below:</h4>
+<form method="POST" class='add-employee'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Save</button>
+</form>
+{% endblock %}
