@@ -5,6 +5,7 @@
     {% for employee in Employee_List %}
     <ul>
         <li> <a href="{% url 'employee_detail' pk=employee.pk %}">Employee: {{employee.name}}</a> </li>
+        <li><a href="{% url 'employee_update' pk=employee.pk %}">Update</a></li>
         <li> Department : {{employee.department.dept_name}}</li>
     </ul>
     {% endfor %}

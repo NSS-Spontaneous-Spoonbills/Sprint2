@@ -1,25 +1,21 @@
 <nav>
-    {% if nav_location != 'employees' %}
+        <form action="/WorkforceManagement/" method='get'>
+        <input type="submit" value="Home">
+        </form>
+
         <form action="/WorkforceManagement/employees" method='get'>
         <input type="submit" value="Employees">
         </form>
-    {% endif %}
 
-    {% if nav_location != 'departments' %}
         <form action="/WorkforceManagement/departments" method='get'>
         <input type="submit" value="Departments">
         </form>
-    {% endif %}
 
-    {% if nav_location != 'computers' %}
         <form action="/WorkforceManagement/computers" method='get'>
         <input type="submit" value="Computers">
         </form>
-    {% endif %}
 
-    {% if nav_location != 'trainings' %}
         <form action="/WorkforceManagement/training_programs" method='get'>
         <input type="submit" value="Training Programs">
         </form>
-    {% endif %}
 </nav>
