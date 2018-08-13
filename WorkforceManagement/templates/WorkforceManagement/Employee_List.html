@@ -1,5 +1,6 @@
 {% extends 'WorkforceManagement/index.html' %} {% block content %}
 <div class="employees">
+    <a href="{% url 'new_employee' %}">Create New Employee Account</a>
     <h3>List of Employees</h3>
     {% for employee in Employee_List %}
     <ul>
