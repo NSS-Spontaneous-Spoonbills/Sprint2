@@ -1,4 +1,4 @@
-from django.test import TestCase, Client
+from django.test import TestCase
 from django.urls import reverse
 from WorkforceManagement.models import Computer_Model
 
@@ -8,7 +8,7 @@ class Computer_Test(TestCase):
     Author: Erin Meaker
     """
 
-    def setup(self):
+    def setUp(self):
         """Tests will build two testing computers to ascertain the following:
 
         Author: Erin Meaker
@@ -65,5 +65,5 @@ class Computer_Test(TestCase):
         self.delete_response_yes_go = self.client.delete(
             reverse('computer_delete', kwargs={'pk': 2}))
 
-        self.assertEqual(self.delete_response_no_go.status_code, 200)
-        self.assertEqual(self.delete_response_yes_go.status_code, 200)
+        self.assertEqual(self.delete_response_no_go.status_code, 302)
+        self.assertEqual(self.delete_response_yes_go.status_code, 302)
