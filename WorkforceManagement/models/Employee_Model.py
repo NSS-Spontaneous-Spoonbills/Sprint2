@@ -10,7 +10,10 @@ class Employee(models.Model):
     computer = models.ForeignKey('Computer', on_delete=models.CASCADE)
     is_supervisor = models.BooleanField(default=False)
     name = models.CharField(max_length=50)
-    start_date = models.DateField(auto_now_add=True)
+    start_date = models.DateField(auto_now_add=False)
+
+    def get_absolute_url(self):
+        return reverse('employee-new', kwargs={'pk': self.pk})
 
     def __str__(self):
 

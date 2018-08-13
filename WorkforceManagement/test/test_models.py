@@ -25,8 +25,8 @@ class Employee_Test(TestCase):
             decom_date='2023-08-08',
             manufacturer='Macbook',
             make='Pro 15in',
-            has_been_assigned='True'
-        )
+            has_been_assigned=False
+            )
         new_training = Training_Model.Training_Prog.objects.create(
             prog_name='Jazzercise 101',
             training_desc='Get ready to get Jazzy with it',
