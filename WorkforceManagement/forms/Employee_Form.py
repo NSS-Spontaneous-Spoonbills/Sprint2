@@ -1,5 +1,5 @@
 from django import forms
-from WorkforceManagement.models.Employee_Model import Employee
+from WorkforceManagement.models import Employee
 
 class Employee_New_Form(forms.ModelForm):
     """

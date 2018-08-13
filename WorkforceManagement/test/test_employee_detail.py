@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from WorkforceManagement.models import Employee_Model, Department_Model, Computer_Model, Training_Model
+from WorkforceManagement.models import Employee, Department, Computer, Training_Prog
 
 """
 Class Employee Detail Test was created to test on whether an instatiated user passes the proper Status, Context, & Content
@@ -14,20 +14,20 @@ class Employee_Detail_Test(TestCase):
 
     """
     def setUp(self):
-        self.new_department = Department_Model.Department.objects.create(
+        self.new_department = Department.objects.create(
             dept_name='Accounting',
             budget=50
         )
 
-        self.new_computer = Computer_Model.Computer.objects.create(
+        self.new_computer = Computer.objects.create(
             purchase_date='2018-08-08',
             decom_date='2023-08-08',
             manufacturer='Macbook',
             make='Pro 15in',
-            has_been_assigned='True'
+            has_been_assigned='False'
         )
 
-        self.new_training = Training_Model.Training_Prog.objects.create(
+        self.new_training = Training_Prog.objects.create(
             prog_name='Jazzercise 101',
             training_desc='Get ready to get Jazzy with it',
             start_date='2018-08-08',
@@ -35,7 +35,7 @@ class Employee_Detail_Test(TestCase):
             max_attendance='50'
         )
 
-        self.new_employee = Employee_Model.Employee.objects.create(
+        self.new_employee = Employee.objects.create(
             department=self.new_department,
             computer=self.new_computer,
             is_supervisor=False,
