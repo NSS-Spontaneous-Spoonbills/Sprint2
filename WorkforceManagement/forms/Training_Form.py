@@ -1,7 +1,7 @@
 from django import forms
 from WorkforceManagement.models import Training_Prog
 
-class Training_Form(forms.ModelForm):
+class Training_New_Form(forms.ModelForm):
 
   class Meta:
       model = Training_Prog
