@@ -10,7 +10,3 @@ class Employee_New_Form(forms.ModelForm):
 
         model = Employee
         fields = ('name', 'start_date', 'department', 'computer' )
-
-
-
-
